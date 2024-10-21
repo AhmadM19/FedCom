@@ -61,7 +61,7 @@ client_configs = [
       {"mem_limit": "5g", "batch_size": 128, "cpus": 2.5, "learning_rate": 0.09},
 ]
 ```
-## 🎯 Architecure Design
+## 🎯 Architecture Design
 ![Design Image](data/repoImages/FedComArch.png)
 
 ## 🛠️ Running the Project Simulation
@@ -96,7 +96,7 @@ Visit `http://localhost:3000` to enter Grafana dashboard:
 ## Results
 With four clients having different datasets and different computing resources, the FedCom Federated Model acheived an accuracy of 96.4% from the third round of server aggregation. The model used was a feed-forward neural network(FNN) with two hidden layers.
 ![Result Image](data/repoImages/ModelResult.png)
-This project serves as a foundational example for the combination of complex network measures(to improve accuracy) and federated learning environment(to preserve privacy, reduce latency and load) under real-world circumstances where device & data heterogeneity is present.
+This project serves as a foundational example for the combination of complex network measures (to improve accuracy) and federated learning environment (to preserve privacy, reduce latency and load) under real-world circumstances where device & data heterogeneity is present.
 
 
 
