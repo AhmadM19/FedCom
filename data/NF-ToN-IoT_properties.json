@@ -1,0 +1,1 @@
+{"name": "NF-ToN-IoT", "length": 1210929, "num_benign": 212811, "percentage_of_benign_records": 17.574193036916284, "num_attack": 998118, "percentage_of_attack_records": 82.42580696308372, "attacks": ["Benign", "dos", "injection", "ddos", "scanning", "password", "mitm", "xss", "backdoor", "ransomware"], "attack_benign_ratio": 4.690161692769641}

@@ -1,0 +1,1 @@
+{"name": "NF-UNSW-NB15-Modified", "length": 90120, "num_benign": 31679, "percentage_of_benign_records": 35.1520195295162, "num_attack": 58441, "percentage_of_attack_records": 64.8479804704838, "attacks": ["Exploits", "Reconnaissance", "DoS", "Benign", "Generic", "Backdoor", "Shellcode", "Fuzzers", "Worms", "Analysis"], "attack_benign_ratio": 1.8447867672590674}

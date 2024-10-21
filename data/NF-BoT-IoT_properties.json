@@ -1,0 +1,1 @@
+{"name": "NF-BoT-IoT", "length": 600100, "num_benign": 13859, "percentage_of_benign_records": 2.309448425262456, "num_attack": 586241, "percentage_of_attack_records": 97.69055157473754, "attacks": ["Benign", "Theft", "DDoS", "DoS", "Reconnaissance"], "attack_benign_ratio": 42.30038242297424}
