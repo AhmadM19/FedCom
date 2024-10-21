@@ -1,7 +1,7 @@
 # FedCom: A Federated Learning Project Using Complex Network Measures
 
 ## 👨‍💻Introduction
-Researches have shown that integrating complex network measures into network detection models improves the accuracy of such models. According to "GDLC", a paper written by Termos et. al(2023) this integration improved detection accuracy in binary classification by up to 7.77%.
+Researches have shown that integrating complex network measures into network detection models improves the accuracy of such models. According to "GDLC", a paper written by Termos et. al(2023) this integration improves detection accuracy in binary classification by up to 7.77%.
 These measures offer insights into the connectivity and organization of network components.
 They quantify the importance of nodes within the network, and can highlight critical points that might influence overall network behavior. Furthermore, they can enhance model ability to generalize across diverse network configurations.
 
