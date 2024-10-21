@@ -62,7 +62,7 @@ client_configs = [
 ]
 ```
 ## 🎯 Architecure Design
-![Design Image](data\repoImages\FedComArch.png)
+![Design Image](data/repoImages/FedComArch.png)
 
 ## 🛠️ Running the Project Simulation
 To run the project, you'll need Docker installed and the Docker daemon active on your server. If you haven't installed Docker yet, you can find installation instructions for your specific OS on the Docker website. The only other requirement is that Python must be installed. There's no need to set up a new environment for this example, as all dependencies will be handled within the Docker containers automatically.
@@ -95,7 +95,7 @@ Visit `http://localhost:3000` to enter Grafana dashboard:
 
 ## Results
 With four clients having different datasets and different computing resources, the FedCom Federated Model acheived an accuracy of 96.4% from the third round of server aggregation. The model used was a feed-forward neural network(FNN) with two hidden layers.
-![Result Image](data\repoImages\ModelResult.png)
+![Result Image](data/repoImages/ModelResult.png)
 This project serves as a foundational example for the combination of complex network measures(to improve accuracy) and federated learning environment(to preserve privacy, reduce latency and load) under real-world circumstances where device & data heterogeneity is present.
 
 
