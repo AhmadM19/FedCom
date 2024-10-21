@@ -1,14 +1,14 @@
 # FedCom: A Federated Learning Project Using Complex Network Measures
-
+![PyTorch](https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=for-the-badge&logo=PyTorch&logoColor=white) ![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white) ![Grafana](https://img.shields.io/badge/grafana-%23F46800.svg?style=for-the-badge&logo=grafana&logoColor=white) ![Prometheus](https://img.shields.io/badge/Prometheus-E6522C?style=for-the-badge&logo=Prometheus&logoColor=white) 
 ## 👨‍💻Introduction
-Researches have shown that integrating complex network measures into network detection models improves the accuracy of such models. According to "GDLC", a paper written by Termos et. al(2023) this integration improves detection accuracy in binary classification by up to 7.77%.
+Researches have shown that integrating complex network measures into network detection models improves the accuracy of such models. According to <a href="https://www.semanticscholar.org/paper/GDLC%3A-A-new-Graph-Deep-Learning-framework-based-on-Termos-Ghalmane/492297bfcdc03f7a79c8eb1a585feb259ea0dd0e">"GDLC"</a>, a paper written by Termos et al.(2024) this integration improves detection accuracy in binary classification by up to 7.77%.
 These measures offer insights into the connectivity and organization of network components.
 They quantify the importance of nodes within the network, and can highlight critical points that might influence overall network behavior. Furthermore, they can enhance model ability to generalize across diverse network configurations.
 
-Federated learning is a machine learning approach where models are trained across multiple decentralized devices or servers that hold local data, without transferring the data to a central server.
+Federated learning is a machine learning approach where models are trained across multiple decentralized devices that hold local data, without transferring the data to a central server.
 It offers several key benefits, including enhanced privacy, reduced computational load, and lower latency. By keeping data on local devices, it protects sensitive information and reduces the risk of data breaches, as no raw data is transmitted to central servers. Additionally, it distributes the computational workload across multiple devices, easing the burden on central systems and allowing more scalable and efficient training. This decentralized approach also reduces latency, as models are updated locally, avoiding the delays associated with transferring large datasets to a central server.
 
-The FedCom project aims to combine complex network measures with federating learning to leverage the benefits of both. It validates the idea in real-world environments where devices have varying data distributions (heterogeneous data) and different computational capacities (heterogeneous devices)
+The FedCom project aims to combine complex network measures with federating learning to leverage the benefits of both. It validates the idea in real-world environments where devices have varying data distributions (heterogeneous data) and different computational capacities (heterogeneous devices).
 
 ## 🧬Preprocessing Phase
 A proprocessing step is performed on the datasets, it involves: <br />
@@ -19,12 +19,12 @@ A proprocessing step is performed on the datasets, it involves: <br />
 🔵Constructing Network Graph from Dataset<br />
 🔵Calculating Complex Network Measures<br />
 🔵Appending Complex Network Measures as Features to Dataset <br />
-The dataset must be in ./data directory and in csv NF(Netflow) Format.
+The dataset must be in `./data` directory and in `.csv` NF(Netflow) Format.
 To preprocess a given dataset run:
 ```bash
 python helpers/dataset_preprocessing.py --name=[NameofYourDataset]
 ```
-The netflow format can be extracted from any pcap file by the nProbe tool:
+In case your dataset is not in Netflow format, this format can be extracted from your PCAP files by the <a href="https://packages.ntop.org/">nProbe tool</a>:
 ```bash
 nprobe /c --pcap-file-list '[Source pcaps list]' -V 9 -n none -T %OUT_BYTES%OUT_PKTS%L4_DST_PORT%IPV4_DST_ADDR%IPV4_SRC_ADDR %PROTOCOL%L4_SRC_PORT%IN_BYTES%IN_PKTS%L7_PROTO%TCP_FLAGS %FLOW_DURATION_MILLISECONDS --dump-path '[Destination]' --dump-format t --csv-separator , --max-log-lines 100000000 --dont-reforge-timestamps --dump-frequency 100000000
 ```
@@ -65,8 +65,8 @@ client_configs = [
 ![Design Image](data/repoImages/FedComArch.png)
 
 ## 🛠️ Running the Project Simulation
-To run the project, you'll need Docker installed and the Docker daemon active on your server. If you haven't installed Docker yet, you can find installation instructions for your specific OS on the Docker website. The only other requirement is that Python must be installed. There's no need to set up a new environment for this example, as all dependencies will be handled within the Docker containers automatically.
-You can run the project by thess few steps:
+To run the project, you'll need Python & Docker installed. There's no need to set up a new environment for this example, as all dependencies will be handled within the Docker containers automatically.
+You can run the project by these few steps:
 
 ```bash
 # Generate docker compose file
@@ -78,7 +78,7 @@ docker-compose build
 # Launch everything
 docker-compose up
 ```
-By following the above steps, you will have a fully functional federated learning environment with device/data heterogeneity and monitoring capabilities.
+By following the above steps, you will have a fully functional federated learning environment with heterogeneous devices/data and monitoring capabilities.
 
 ## 🎬 Monitoring Simulation
 Several services will automatically launch as defined in `docker-compose.yml` file: </br>
@@ -87,18 +87,13 @@ Several services will automatically launch as defined in `docker-compose.yml` fi
 🔹 Cadvisor for container monitoring  </br>
 🔹 Grafana for data visualization </br>
 🖥️ **Flower Federated Learning Environment:**  </br>
-The Flower server and client containers are initialized and start running.</br>
+The Flower server and client containers are initialized and they start running.</br>
 
 To see the dashboard at your browser: 
 Visit `http://localhost:3000` to enter Grafana dashboard:
 <img width="1440" alt="grafana_home_screen" src="https://github.com/ChoosyDevs/Choosy/assets/59146613/46c1016d-2376-4fdc-ae5f-68c550fc8e46">
 
-## Results
-With four clients having different datasets and different computing resources, the FedCom Federated Model acheived an accuracy of 96.4% from the third round of server aggregation. The model used was a feed-forward neural network(FNN) with two hidden layers.
+## 💡Conclusion
+With four clients having different datasets and different computing resources, the FedCom federated model acheived an accuracy of 96.4% from the third round of server model aggregation. The global model used was a feed-forward neural network(FNN) with two hidden layers. </br>
 ![Result Image](data/repoImages/ModelResult.png)
 This project serves as a foundational example for the combination of complex network measures (to improve accuracy) and federated learning environment (to preserve privacy, reduce latency and load) under real-world circumstances where device & data heterogeneity is present.
-
-
-
-
-
